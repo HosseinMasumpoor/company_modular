@@ -1,0 +1,15 @@
+{
+    "Admin": true,
+    "Core": true,
+    "Role": true,
+    "Category": true,
+    "Technology": true,
+    "Article": true,
+    "Service": true,
+    "Experience": true,
+    "Partner": true,
+    "FAQ": true,
+    "Slider": true,
+    "Project": true,
+    "Customer": true
+}

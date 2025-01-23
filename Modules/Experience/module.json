@@ -1,0 +1,11 @@
+{
+    "name": "Experience",
+    "alias": "experience",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\Experience\\Providers\\ExperienceServiceProvider"
+    ],
+    "files": []
+}
