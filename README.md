@@ -7,7 +7,7 @@ This project is a modular corporate website developed using Laravel version 11. 
 - **Design Patterns**: Utilizes various design patterns such as Observer, Service, and Repository.
 - **Caching**: Implements Redis caching for improved performance.
 - **Modular Development**: The project follows a modular architecture, making it easier to maintain and extend.
-- **Multilingual**: Supports multiple languages.
+- **Multi-language support**: Supports multiple languages.
 - **Role-Based Access Control**: Includes different access levels for administrators.
 
 ## API Development
