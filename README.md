@@ -23,7 +23,7 @@ The project includes the following modules:
 3. **Projects**: Manages company projects and portfolios.
 4. **Services**: Details the services offered by the company.
 5. **Partners**: Manages partnerships and collaborations.
-6. **Customer Experience**: Collects and displays customer feedback and testimonials.
+6. **Customer Experience**: Displays customer feedback and testimonials.
 7. **Categories**: Organizes content into various categories.
 8. **Slider**: Manages the homepage and other sliders.
 9. **FAQ**: Handles frequently asked questions.
