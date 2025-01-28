@@ -64,10 +64,3 @@ To get started with the project, follow these steps:
 8. Start the development server:
    ```bash
    php artisan serve
-## Contributing
-
-Contributions are welcome! Please read the [CONTRIBUTING.md](CONTRIBUTING.md) file for details on how to get started.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
