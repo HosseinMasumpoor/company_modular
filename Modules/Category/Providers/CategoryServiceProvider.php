@@ -4,6 +4,8 @@ namespace Modules\Category\Providers;
 
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
+use Modules\Category\Models\Category;
+use Modules\Category\Observers\CategoryObserver;
 use Nwidart\Modules\Traits\PathNamespace;
 use RecursiveDirectoryIterator;
 use RecursiveIteratorIterator;
@@ -27,6 +29,7 @@ class CategoryServiceProvider extends ServiceProvider
         $this->registerConfig();
         $this->registerViews();
         $this->loadMigrationsFrom(module_path($this->name, 'database/migrations'));
+        $this->setObservers();
     }
 
     /**
@@ -131,5 +134,10 @@ class CategoryServiceProvider extends ServiceProvider
         }
 
         return $paths;
+    }
+
+    private function setObservers()
+    {
+        Category::observe(CategoryObserver::class);
     }
 }

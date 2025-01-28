@@ -4,6 +4,8 @@ namespace Modules\Article\Providers;
 
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
+use Modules\Article\Models\Article;
+use Modules\Article\Observers\ArticleObserver;
 use Nwidart\Modules\Traits\PathNamespace;
 use RecursiveDirectoryIterator;
 use RecursiveIteratorIterator;
@@ -27,6 +29,7 @@ class ArticleServiceProvider extends ServiceProvider
         $this->registerConfig();
         $this->registerViews();
         $this->loadMigrationsFrom(module_path($this->name, 'database/migrations'));
+        $this->setObservers();
     }
 
     /**
@@ -131,5 +134,10 @@ class ArticleServiceProvider extends ServiceProvider
         }
 
         return $paths;
+    }
+
+    private function setObservers(): void
+    {
+        Article::observe(ArticleObserver::class);
     }
 }
