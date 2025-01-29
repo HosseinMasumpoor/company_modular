@@ -14,6 +14,8 @@ services:
             - ./.docker/php/conf.d/error_reporting.ini:/usr/local/etc/php/conf.d/error_reporting.ini
         networks:
             - corporate_network
+        env_file:
+            - .env.docker
     db:
         image: mariadb:latest
         container_name: corporate_mysql
