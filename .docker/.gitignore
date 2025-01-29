@@ -1,3 +1,5 @@
 mysql
 nginx/logs
 redis/data
+dbdata
+redis
