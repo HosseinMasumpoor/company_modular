@@ -2,7 +2,7 @@
 
 namespace Modules\FAQ\Http\Controllers;
 
-use Modules\Project\Http\Controllers\v1\Controller;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 class FAQController extends Controller

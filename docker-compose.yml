@@ -1,0 +1,58 @@
+services:
+    app:
+        ports:
+            - "11111:11111"  # Add this line to publish PHPStan Pro's port
+        build:
+            context: .docker
+            dockerfile: Dockerfile
+        container_name: corporate_app
+        restart: unless-stopped
+        working_dir: /var/www/
+        volumes:
+            - ./:/var/www
+            - ./.docker/php/conf.d/uploads.ini:/usr/local/etc/php/conf.d/uploads.ini
+            - ./.docker/php/conf.d/error_reporting.ini:/usr/local/etc/php/conf.d/error_reporting.ini
+        networks:
+            - corporate_network
+    db:
+        image: mariadb:latest
+        container_name: corporate_mysql
+        restart: unless-stopped
+        environment:
+            MYSQL_DATABASE: company_modular
+            MYSQL_USER: root
+            MYSQL_PASSWORD: password
+            MYSQL_ROOT_PASSWORD: password
+            SERVICE_TAGS: dev
+            SERVICE_NAME: mysql
+        ports:
+            - "3302:3306"
+        volumes:
+            - ./.docker/dbdata:/var/lib/mysql
+            - ./.docker/mysql/my.cnf:/etc/mysql/my.cnf
+        networks:
+            - corporate_network
+    nginx:
+        image: nginx:latest
+        container_name: corporate_nginx
+        restart: unless-stopped
+        ports:
+            - "84:80"
+        volumes:
+            - ./:/var/www
+            - ./.docker/nginx:/etc/nginx/conf.d
+        networks:
+            - corporate_network
+    redis:
+        image: redis:latest
+        container_name: corporate_redis
+        restart: unless-stopped
+        networks:
+            - corporate_network
+        ports:
+            - "6379:6379"
+        volumes:
+            - ./.docker/redis:/data
+networks:
+    corporate_network:
+        driver: bridge
