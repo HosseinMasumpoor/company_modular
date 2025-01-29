@@ -9,7 +9,7 @@ This project is a modular corporate website developed using Laravel version 11. 
 - **Modular Development**: The project follows a modular architecture, making it easier to maintain and extend.
 - **Multi-language support**: Supports multiple languages.
 - **Role-Based Access Control**: Includes different access levels for administrators.
-
+- **Dockerized**: The project is Dockerized, ensuring easy setup and consistent environments across different systems.
 ## API Development
 
 The project is developed as an API, ensuring flexibility and scalability for future integrations.
