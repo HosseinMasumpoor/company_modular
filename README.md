@@ -31,7 +31,10 @@ The project includes the following modules:
 
 ## Installation
 
-To get started with the project, follow these steps:
+You can set up the project either **with Docker** or **without Docker**. Follow the instructions below based on your preference.
+
+### Option 1: Without Docker
+
 
 1. Clone the repository:
    ```bash
@@ -39,7 +42,7 @@ To get started with the project, follow these steps:
 
 2. Navigate to the project directory:
    ```bash
-   cd your-repo-name
+   cd company_modular
    
 3. Install dependencies:
    ```bash
@@ -64,3 +67,32 @@ To get started with the project, follow these steps:
 8. Start the development server:
    ```bash
    php artisan serve
+
+### Option 2: With Docker
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/HosseinMasumpoor/company_modular.git
+
+2. Navigate to the project directory:
+   ```bash
+   cd company_modular
+
+3. Set up your environment variables:
+   ```bash
+   cp .env.example .env
+
+4. Build and start the Docker containers:
+   ```bash
+   docker-compose up -d
+
+5. Run migrations and seed the database:
+   ```bash
+   docker exec -it corporate_app bash
+   php artisan migrate
+   php artisan db:seed
+   exit
+
+6. Access the project at:
+   ```bash
+   http://localhost:84
