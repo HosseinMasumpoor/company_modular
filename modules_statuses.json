@@ -12,5 +12,6 @@
     "Slider": true,
     "Project": true,
     "Customer": true,
-    "Front": true
+    "Front": true,
+    "ContactUs": true
 }

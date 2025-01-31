@@ -1,13 +1,11 @@
 <?php
 
-namespace App\Models;
+namespace Modules\Project\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class ProjectTech extends Model
 {
-    use HasFactory;
     protected $appends = ['iconUrl'];
     protected $table = 'project_teches';
     protected $fillable = [
