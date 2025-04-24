@@ -16,7 +16,7 @@ class ArticleRepository extends Repository
     {
         return app(Pipeline::class)
             ->send(
-                (new self)->query()
+                $this->query()
             )
             ->thenReturn()
             ->orderByDesc('created_at');

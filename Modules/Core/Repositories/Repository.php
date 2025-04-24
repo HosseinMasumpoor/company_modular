@@ -78,9 +78,9 @@ class Repository implements RepositoryInterface
         return $record->delete();
     }
 
-    public function destroy(int $id): void
+    public function destroy(int $id): bool
     {
-        $this->model::destroy($id);
+        return $this->model::destroy($id);
     }
 
     public function restore(int $id): ?Model
@@ -106,7 +106,8 @@ class Repository implements RepositoryInterface
 
     public function findByIdWithTrashed(int $id): ?Model
     {
-        if (! method_exists($this->model, 'isSoftDelete')) {
+        $modelClass = is_string($this->model) ? $this->model : get_class($this->model);
+        if (! in_array('Illuminate\Database\Eloquent\SoftDeletes', class_uses($modelClass))) {
             return null;
         }
 
